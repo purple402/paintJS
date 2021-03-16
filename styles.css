@@ -24,6 +24,30 @@ body {
     align-items: center;
 }
 
+.controls .controls__btns {
+    margin-bottom: 20px;
+}
+
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 0px;
+    width: 70px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+    color:rgba(0, 0, 0, .6);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.controls__btns button:active {
+    transform: scale(0.98);
+}
+
 .controls__colors {
     display: flex;
 }
