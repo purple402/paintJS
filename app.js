@@ -1,6 +1,7 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
+const range = document.getElementById("jsRange");
 
 canvas.width = 500;
 canvas.height = 500;
@@ -33,6 +34,11 @@ function onMouseMove(event) {
 function handleColorClick(event) {
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
+function handleRangeChange(event) {
+    const size = event.target.value;
+    ctx.lineWidth = size;
+}
+
 }
 
 if(canvas) {
@@ -41,5 +47,10 @@ if(canvas) {
     canvas.addEventListener('mouseup', stopPainting);
     canvas.addEventListener('mouseleave', stopPainting);
 Array.from(colors).forEach(color => color.addEventListener('click', handleColorClick));
+
+if(range) {
+    range.addEventListener('input', handleRangeChange);
+    // 'change'는 클릭을 멈춘 마지막 위치를 감지함
+    // 'input'은 값이 변할때마다 반응함
 }
 
