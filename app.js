@@ -22,7 +22,9 @@ function stopPainting() {
 }
 
 function startPainting() {
-    painting = true;
+    if(filling === false) {
+        painting = true;
+    }
 }
 
 function onMouseMove(event) {
