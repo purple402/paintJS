@@ -13,15 +13,20 @@ function stopPainting() {
     painting = false;
 }
 
-function onMouseMove(event){
-    const x = event.offsetX;
-    const y = event.offsetY;
-}
-
 function startPainting() {
     painting = true;
 }
 
+function onMouseMove(event) {
+    const x = event.offsetX;
+    const y = event.offsetY;
+    if(!painting) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    } else {
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
 }
 
 if(canvas) {
