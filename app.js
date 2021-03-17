@@ -2,6 +2,7 @@ const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
+const mode = document.getElementById("jsMode");
 
 canvas.width = 500;
 canvas.height = 500;
@@ -39,6 +40,16 @@ function handleRangeChange(event) {
     ctx.lineWidth = size;
 }
 
+function handleModeClick() {
+    if(filling === true) {
+        filling = false;
+        mode.innerText = "fill";
+    } else {
+        filling = true;
+        mode.innerText = "paint";
+    }
+}
+
 }
 
 if(canvas) {
@@ -54,3 +65,6 @@ if(range) {
     // 'input'은 값이 변할때마다 반응함
 }
 
+if(mode) {
+    mode.addEventListener("click", handleModeClick);
+}
