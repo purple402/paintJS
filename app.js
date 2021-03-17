@@ -4,10 +4,13 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 
-canvas.width = 500;
-canvas.height = 500;
+const INITIAL_COLOR = "#2c2c2c";
+const CANVAS_SIZE = 500;
 
-ctx.strokeStyle = "#2c2c2c";
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
+
+ctx.strokeStyle = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
 
 let painting = false;
