@@ -76,10 +76,11 @@ function handleCM(event) {
 }
 
 function handleSaveClick() {
-    const download =
-    const dataURL = canvas.toDataURL();
-
-     
+    const image = canvas.toDataURL();
+    const link = document.createElement('a');
+    link.href = image;
+    link.download = "PaintJS"
+    link.click();
 }
 
 if(canvas) {
